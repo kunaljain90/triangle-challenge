@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+///<reference path="../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
 }

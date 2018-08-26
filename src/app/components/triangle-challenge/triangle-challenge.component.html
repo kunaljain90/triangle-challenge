@@ -1,0 +1,34 @@
+<h2 class="text-center"><img width="166" src="../assets/logo-black.png"/> - Triangle Challenge</h2>
+
+<div *ngIf="triangleType" class="alert alert-info">
+  <strong>Info!</strong> This is {{triangleType}}
+</div>
+
+<form data-ts="Form" [formGroup]="triangleForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <label appHighlightOnError [control]="triangleForm.get('sideA')">
+      <span>Side A</span>
+      <input name="sideA" placeholder="Enter length of side A" formControlName="sideA" type="number"/>
+    </label>
+    <app-show-errors [control]="triangleForm.get('sideA')" fieldName="triangleForm.sideA"></app-show-errors>
+
+    <label appHighlightOnError [control]="triangleForm.get('sideB')">
+      <span>Side B</span>
+      <input name="sideB" placeholder="Enter length of side B" formControlName="sideB" type="number"/>
+    </label>
+    <app-show-errors [control]="triangleForm.get('sideB')" fieldName="triangleForm.sideB"></app-show-errors>
+
+    <label appHighlightOnError [control]="triangleForm.get('sideC')">
+      <span>Side C</span>
+      <input name="sideC" placeholder="Enter length of side C" formControlName="sideC" type="number"/>
+    </label>
+    <app-show-errors [control]="triangleForm.get('sideC')" fieldName="triangleForm.sideC"></app-show-errors>
+
+    <div class="wrapper">
+      <button type="submit" [disabled]="!triangleForm.valid" data-ts="Button" class="ts-secondary">
+        <span>Submit</span>
+      </button>
+    </div>
+  </fieldset>
+</form>

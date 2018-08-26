@@ -1,0 +1,5 @@
+<dl class="ts-errors" *ngIf="(control.dirty)">
+  <ng-container *ngFor="let validation of errorMessages">
+    <dd *ngIf="control.hasError(validation.type)">{{validation.message}}</dd>
+  </ng-container>
+</dl>
