@@ -33,4 +33,4 @@ Highlights of this app
   7. Unit Tests
   8. Mobile friendly
   
-You can view [Demo App here](tradeshift-triangle-challenge.techtonick.com)
+You can view [Demo App here](http://tradeshift-triangle-challenge.techtonick.com)
