@@ -27,7 +27,11 @@ export class ShowErrorsComponent implements OnInit {
 
   ngOnInit() {
     if (this.errorMessagesService.errorMessages !== undefined) {
-      this.errorMessages = ShowErrorsComponent.getErrorMessagesForField(this.fieldName, this.errorMessagesService.errorMessages);
+      const messages = ShowErrorsComponent.getErrorMessagesForField(this.fieldName, this.errorMessagesService.errorMessages);
+
+      if (messages !== undefined) {
+        this.errorMessages = messages;
+      }
     }
   }
 }

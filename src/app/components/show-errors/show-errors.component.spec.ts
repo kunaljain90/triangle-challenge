@@ -1,28 +1,40 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowErrorsComponent } from './show-errors.component';
-import {FormsModule} from "@angular/forms";
 import {ErrorMessagesService} from "../../services/error-messages.service";
 
+let component: ShowErrorsComponent;
+let fixture: ComponentFixture<ShowErrorsComponent>;
 describe('ShowErrorsComponent', () => {
-  let component: ShowErrorsComponent;
-  let fixture: ComponentFixture<ShowErrorsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:      [ FormsModule ],
-      declarations: [ ShowErrorsComponent ]
+      declarations: [ ShowErrorsComponent ],
+      providers: [ErrorMessagesService]
     })
-    .compileComponents();
+    .compileComponents().then(() => {
+      fixture = TestBed.createComponent(ShowErrorsComponent);
+      component    = fixture.componentInstance;
+    });
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ShowErrorsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  tests();
+});
+
+function tests() {
+  it('can instantiate the component', () => {
+    expect(component).not.toBeNull();
   });
 
-  /*it('should be created', () => {
-    expect(component).toBeTruthy();
-  });*/
-});
+  it('Get Error Messages for injected fieldname triangleForm.sideA', () => {
+    component.fieldName = 'triangleForm.sideA';
+    component.ngOnInit();
+    expect(component.errorMessages.length >= 1).toBe(true);
+  });
+
+  it('Get Empty Error Messages when field name is not valid', () => {
+    component.fieldName = 'triangleForm.abcd';
+    component.ngOnInit();
+    expect(component.errorMessages.length === 0).toBe(true);
+  });
+}
