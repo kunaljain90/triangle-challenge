@@ -18,11 +18,19 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Description
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+This app is developed using Tradeshift UI components and angular. It will take 3 sides of a triangle as an input and calculate the type of triange i.e Equilateral, Isosceles or Scalene. Incase inputs are invalid it will show a message as Invalid triangle. 
 
-## Further help
+Highlights of this app
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  1. Tradeshift UI components
+  2. Angular SPA framework
+  3. Reactive Forms validation
+  4. Custom Components 
+  5. Custom Directives
+  6. Services
+  7. Unit Tests
+  8. Mobile friendly
+  
+You can view [Demo App here](tradeshift-triangle-challenge.techtonick.com)
