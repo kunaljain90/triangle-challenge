@@ -23,11 +23,21 @@ export class TriangleService {
 
     // 1. Check if input is an array
     // 2. Check if there are 3 inputs only for a triangle
-    // 3. Check if inputs are greater than 0
+    // 3. Check if inputs are numbers
     if (sides instanceof Array === false || sides.length !== 3) {
       return false;
     }
-    return sides.filter(side => typeof parseFloat(side) !== 'number').length <= 0;
+
+    if (sides.filter(side => typeof parseFloat(side) !== 'number').length > 0) {
+      return false;
+    }
+
+    for (const side of sides) {
+      if (isNaN(side)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   hasValidSides(sides) {
